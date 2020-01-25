@@ -116,7 +116,7 @@ function (_Component) {
             span.parentElement.removeChild(span.previousSibling);
           }
 
-          _this.props.events[e.target.dataset.action].handler(_this.range, _this.state.card);
+          _this.props.events[e.target.dataset.action].handler(_this.range.cloneContents().children[0], _this.range.toString());
 
           if (window.getSelection) {
             window.getSelection().removeAllRanges();
@@ -136,8 +136,7 @@ function (_Component) {
 
     _this.state = {
       startX: 0,
-      startY: 0,
-      card: null
+      startY: 0
     };
     _this.el = document.createElement('span');
     _this.range = null;
@@ -148,8 +147,6 @@ function (_Component) {
   _createClass(PopOver, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      var _this2 = this;
-
       var style = document.createElement('style');
       style.type = 'text/css';
 
@@ -167,10 +164,6 @@ function (_Component) {
       document.body.appendChild(this.el);
       document.onmouseup = this.selectionEndText;
       document.onmousedown = this.processSelection;
-
-      this.el.onmouseenter = function () {
-        return _this2.props.onHover(_this2.state.card);
-      };
     }
   }, {
     key: "componentWillUnmount",
