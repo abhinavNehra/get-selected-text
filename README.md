@@ -39,7 +39,7 @@ you can add as many event as you want in it
 
 like 
 
-![Image of multi events]((https://raw.githubusercontent.com/abhinavNehra/get-selected-text/master/images/pop-up-multi-event.png))
+![Image of multi events](https://raw.githubusercontent.com/abhinavNehra/get-selected-text/master/images/pop-up-multi-event.png)
 
 this will look like 
 ![Image of multi events view ](https://raw.githubusercontent.com/abhinavNehra/get-selected-text/master/images/multi-function.png)
