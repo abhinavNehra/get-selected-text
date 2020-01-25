@@ -1,10 +1,10 @@
-# react-text-selection-html
+# text-selection-react
 This module provide the selected text and html and also provide the feature to color the selected text/html
 
 ## Installation
 To install this package you have to run
 ```bash
-npm install react-text-selection-html
+npm install text-selection-react
 ```
 
 ## Usage
@@ -14,9 +14,9 @@ This is a independent module. To use it you don't have to wrap it around any com
 
 ```react
 
-import PopOver from 'react-text-selection-html'
+import TextSelector from 'text-selection-react'
 
-    <PopOver
+    <TextSelector
         events={[
         {
             text: 'Submit',
