@@ -41,11 +41,15 @@ like
 
 ![Image of multi events](https://raw.githubusercontent.com/abhinavNehra/get-selected-text/master/images/pop-up-multi-event.png)
 
+
+
 this will look like 
 ![Image of multi events view ](https://raw.githubusercontent.com/abhinavNehra/get-selected-text/master/images/multi-function.png)
 
 
 ## Handler
 handle will return two params. which are html and text.
+
+
 ![Image of return params ](https://raw.githubusercontent.com/abhinavNehra/get-selected-text/master/images/popup_text_html.png)
 
