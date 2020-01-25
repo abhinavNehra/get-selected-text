@@ -29,4 +29,15 @@ import TextSelector from 'text-selection-react'
 
 Here In events you can add as many event as you want. like currently i am using only one event then it will be shown as 
 
-![Image of work](https://raw.githubusercontent.com/abhinavNehra/get-selected-text/master/popover-example.png)
+![Image of work](https://raw.githubusercontent.com/abhinavNehra/get-selected-text/master/images/popover-example.png)
+
+so if you click on submit it will change the background of the text into
+
+![Image of change background](https://raw.githubusercontent.com/abhinavNehra/get-selected-text/master/images/popup_color.png)
+
+you can add as many event as you want in it 
+
+like 
+
+![Image of multi events](https://raw.githubusercontent.com/abhinavNehra/get-selected-text/master/images/multi-function.png)
+
