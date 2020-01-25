@@ -1,6 +1,6 @@
 {
   "name": "text-selection-react",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "This module capture selected text and also return the selected HTML",
   "main": "index.js",
   "scripts": {
