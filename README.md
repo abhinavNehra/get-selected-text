@@ -25,4 +25,8 @@ import PopOver from 'react-text-selection-html'
         ]}
     />
 
-    ```
+```
+
+Here In events you can add as many event as you want. like currently i am using only one event then it will be shown as 
+
+![Image of work](https://raw.githubusercontent.com/abhinavNehra/get-selected-text/master/popover-example.png)
