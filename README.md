@@ -47,5 +47,5 @@ this will look like
 
 ## Handler
 handle will return two params. which are html and text.
-![Image of return params ](https://raw.githubusercontent.com/abhinavNehra/get-selected-text/master/images/popup_color.png)
+![Image of return params ](https://raw.githubusercontent.com/abhinavNehra/get-selected-text/master/images/popup_text_html.png)
 
