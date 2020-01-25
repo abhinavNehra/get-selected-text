@@ -1,0 +1,35 @@
+{
+  "name": "react-text-selection",
+  "version": "1.0.0",
+  "description": "This module capture selected text and also return the selected HTML",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/.bin/babel src --out-file index.js"
+  },
+  "keywords": [
+    "\"text",
+    "selection\"",
+    "getselection",
+    "window.getselection",
+    "document.getselection",
+    "selected",
+    "html",
+    "\"selected",
+    "html\""
+  ],
+  "author": "Abhinav Nehra",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.8.3",
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-react": "^7.8.3"
+  },
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.8.3"
+  }
+}
