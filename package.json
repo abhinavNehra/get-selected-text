@@ -1,6 +1,6 @@
 {
   "name": "text-selection-react",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "This module capture selected text and also return the selected HTML",
   "main": "index.js",
   "scripts": {
@@ -34,5 +34,4 @@
     "@babel/plugin-proposal-class-properties": "^7.8.3"
   },
   "homepage": "https://github.com/abhinavNehra/get-selected-text"
-
 }
