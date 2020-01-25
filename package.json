@@ -8,8 +8,9 @@
     "build": "./node_modules/.bin/babel src --out-file index.js"
   },
   "keywords": [
-    "\"text",
-    "selection\"",
+    "text-selection-react",
+    "text",
+    "selection",
     "getselection",
     "window.getselection",
     "document.getselection",
@@ -31,5 +32,7 @@
   ],
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.8.3"
-  }
+  },
+  "homepage": "https://github.com/abhinavNehra/get-selected-text"
+
 }
