@@ -62,3 +62,11 @@ handle will return two params. which are html and text.
 
 ![Image of return params ](https://raw.githubusercontent.com/abhinavNehra/get-selected-text/master/images/popup_text_html.png)
 
+## Shoutouts
+This is written during one of my project in which i have to provide the selected text but i didn't find any library that give you the selected text so i research on it and find this solution uptill now. And will add new function in future as there are many in my mind
+
+## Question 
+if you have any question or want me to add or modify as per your requirement then contact me i will do it for you.
+
+## Request
+If you like it please give a star on github. Thanks
