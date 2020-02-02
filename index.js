@@ -31,7 +31,15 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var css = "\n        .popup {\n          position: absolute;\n          visibility: hidden;\n          z-index: 9999999999;\n          will-change: transform;\n          top: 0px;\n          left: 0px;\n          transform: translate3d(0px, 0px, 0px);\n          width: auto;\n          display:block;\n          background-color: #000;\n          color: #FFF;\n          text-align: center;\n          border-radius: 6px;\n          padding: 10px;\n          margin-left: -80px;\n          line-height: 20px;\n          font-size: 14px;\n          border: 4px solid rgb(0, 0, 0);\n          box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 2px 0px;\n         }\n        .popup::after {\n          content: \"\";\n          position: absolute;\n          width: 0;\n          height: 0;\n          border-width: 10px;\n          border-style: solid;\n          border-color: #000 transparent transparent transparent;\n          top: 44px;\n          left: 50%;\n          margin-left:-12px;\n          \n        }\n        .popupItem{width:auto; padding:8px 12px; font-size:16px; font-weight:bold; border-right:1px solid #433E49; cursor:pointer;}\n        .popupItem:hover{text-decoration:underline; color:#1890ff;}\n        .popupItem:last-child{border-right:none}\n        .extracted-class {\n        position: relative;\n    display: inline-block;\n    }\n        .extracted-class::after {\n          background: yellow;\n          content: \"\";\n          display: block;\n          position: absolute;\n          z-index: 999;\n          left: 0;\n          right: 0;\n          opacity: 0.3;\n          top: 0;\n          bottom: 0;\n        }\n        \n        .extracted-simple-text {\n          background-color: yellow;\n          color: black;\n        }\n        ";
+var css = function css(props) {
+  var color = 'yellow';
+
+  if (props.color) {
+    color = props.color;
+  }
+
+  return "\n        .popup {\n          position: absolute;\n          visibility: hidden;\n          z-index: 9999999999;\n          will-change: transform;\n          top: 0px;\n          left: 0px;\n          transform: translate3d(0px, 0px, 0px);\n          width: auto;\n          display:block;\n          background-color: #000;\n          color: #FFF;\n          text-align: center;\n          border-radius: 6px;\n          padding: 10px;\n          margin-left: -80px;\n          line-height: 20px;\n          font-size: 14px;\n          border: 4px solid rgb(0, 0, 0);\n          box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 2px 0px;\n         }\n        .popup::after {\n          content: \"\";\n          position: absolute;\n          width: 0;\n          height: 0;\n          border-width: 10px;\n          border-style: solid;\n          border-color: #000 transparent transparent transparent;\n          top: 44px;\n          left: 50%;\n          margin-left:-12px;\n          \n        }\n        .popupItem{width:auto; padding:8px 12px; font-size:16px; font-weight:bold; border-right:1px solid #433E49; cursor:pointer;}\n        .popupItem:hover{text-decoration:underline; color:#1890ff;}\n        .popupItem:last-child{border-right:none}\n        .extracted-class {\n        position: relative;\n    display: inline-block;\n    }\n        .extracted-class::after {\n          background:  ".concat(color, ";\n          content: \"\";\n          display: block;\n          position: absolute;\n          z-index: 999;\n          left: 0;\n          right: 0;\n          opacity: 0.3;\n          top: 0;\n          bottom: 0;\n        }\n        \n        .extracted-simple-text {\n          background-color: ").concat(color, ";\n          color: black;\n        }\n        ");
+};
 
 var PopOver =
 /*#__PURE__*/
@@ -91,29 +99,31 @@ function (_Component) {
 
       if (t.toString().length !== 0 && e.target.classList.contains('popupItem')) {
         if (_this.frangment) {
-          var span = document.createElement('span');
+          if (_this.props.colorText) {
+            var span = document.createElement('span');
 
-          try {
-            span.className = 'extracted-simple-text';
+            try {
+              span.className = 'extracted-simple-text';
 
-            _this.range.surroundContents(span);
-          } catch (error) {
-            console.log(error);
-            span.className = 'extracted-class';
+              _this.range.surroundContents(span);
+            } catch (error) {
+              console.log(error);
+              span.className = 'extracted-class';
 
-            var frangment = _this.range.extractContents();
+              var frangment = _this.range.extractContents();
 
-            span.appendChild(frangment);
+              span.appendChild(frangment);
 
-            _this.range.insertNode(span);
-          }
+              _this.range.insertNode(span);
+            }
 
-          if (span.nextSibling.innerHTML === "") {
-            span.parentElement.removeChild(span.nextSibling);
-          }
+            if (span.nextSibling.innerHTML === "") {
+              span.parentElement.removeChild(span.nextSibling);
+            }
 
-          if (span.previousSibling.innerHTML === "") {
-            span.parentElement.removeChild(span.previousSibling);
+            if (span.previousSibling.innerHTML === "") {
+              span.parentElement.removeChild(span.previousSibling);
+            }
           }
 
           _this.props.events[e.target.dataset.action].handler(_this.range.cloneContents().children[0], _this.range.toString());
@@ -151,9 +161,9 @@ function (_Component) {
       style.type = 'text/css';
 
       if (style.styleSheet) {
-        style.styleSheet.cssText += css;
+        style.styleSheet.cssText += css(this.props);
       } else {
-        style.appendChild(document.createTextNode(css));
+        style.appendChild(document.createTextNode(css(this.props)));
       }
 
       this.el.appendChild(style);
