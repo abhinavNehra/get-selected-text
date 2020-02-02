@@ -108,25 +108,45 @@ function (_Component) {
               _this.range.surroundContents(span);
             } catch (error) {
               console.log(error);
-              span.className = 'extracted-class';
+              var ansector = _this.range.commonAncestorContainer;
+              var tagCollection = [];
 
-              var frangment = _this.range.extractContents();
+              if (ansector.nodeType != 3) {
+                tagCollection = Array.from(ansector.querySelectorAll('*'));
+              }
 
-              span.appendChild(frangment);
+              span.className = '';
 
-              _this.range.insertNode(span);
-            }
+              if (_this.frangment && _this.frangment.childNodes && _this.frangment.childNodes.length) {
+                _this.frangment.childNodes.forEach(function (child, i) {
+                  tagCollection.forEach(function (tag) {
+                    if (child.nodeType === 3 && child.nodeName == '#text' && tag.innerHTML.includes(child.textContent)) {
+                      var spanWrapper = document.createElement('span');
+                      spanWrapper.className = 'extracted-simple-text';
+                      spanWrapper.append(child.textContent);
+                      var Html = tag.innerHTML.replace(child.textContent, spanWrapper.innerHTML);
+                      tag.innerHTML = Html;
+                    } else if (tag.innerHTML && tag.innerHTML.includes(child.innerHTML)) {
+                      var _spanWrapper = document.createElement('span');
 
-            if (span.nextSibling.innerHTML === "") {
-              span.parentElement.removeChild(span.nextSibling);
-            }
+                      _spanWrapper.className = 'extracted-simple-text';
 
-            if (span.previousSibling.innerHTML === "") {
-              span.parentElement.removeChild(span.previousSibling);
+                      _spanWrapper.append(child.textContent);
+
+                      var _Html = tag.innerHTML.replace(child.innerHTML, _spanWrapper.outerHTML);
+
+                      tag.innerHTML = _Html;
+                    }
+                  });
+                });
+              }
             }
           }
 
-          _this.props.events[e.target.dataset.action].handler(_this.range.cloneContents().children[0], _this.range.toString());
+          var frangmentWrapper = document.createElement('span');
+          frangmentWrapper.appendChild(_this.frangment);
+
+          _this.props.events[e.target.dataset.action].handler(frangmentWrapper, _this.range.toString());
 
           if (window.getSelection) {
             window.getSelection().removeAllRanges();
