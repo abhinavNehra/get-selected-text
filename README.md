@@ -7,6 +7,9 @@ To install this package you have to run
 npm install text-selection-react
 ```
 
+## Demo
+https://admiring-hodgkin-677ccb.netlify.com/
+
 ## Usage
 
 This is a independent module. To use it you don't have to wrap it around any component. You can put it any where in the component or in the file inside render to use this component.
