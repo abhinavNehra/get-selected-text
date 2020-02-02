@@ -23,6 +23,8 @@ import TextSelector from 'text-selection-react'
             handler: this.handler
         }
         ]}
+        color={'yellow'}
+        colorText={true}
     />
 
 ```
