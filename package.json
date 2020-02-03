@@ -16,8 +16,11 @@
     "document.getselection",
     "selected",
     "html",
-    "\"selected",
-    "html\""
+    "selected",
+    "html",
+    "text selection",
+    "selection text",
+    "selected text"
   ],
   "author": "Abhinav Nehra",
   "license": "MIT",
