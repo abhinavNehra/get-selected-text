@@ -1,5 +1,5 @@
-# text-selection-react
-This module provide the selected text and html and also provide the feature to color the selected text/html
+# text selection react
+text selection react module provide the selected text and html. It also provide the feature to color the selected text/html
 
 ## Installation
 To install this package you have to run
@@ -70,3 +70,6 @@ if you have any question or want me to add or modify as per your requirement the
 
 ## Request
 If you like it please give a star on github. Thanks
+
+# text selection react
+# text-selection-react
