@@ -10,7 +10,8 @@ npm install text-selection-react
 ## Demo
 [Link of demo](https://admiring-hodgkin-677ccb.netlify.com/)
 
-##UPDATE:- Now Support Mobile Browser Also 
+##UPDATE
+ Now Support Mobile Browser Also 
 
 ## Usage
 
