@@ -1,5 +1,5 @@
 # text selection react
-text selection react module provide the selected text and html. It also provide the feature to color the selected text/html
+text selection react module provide the selected text and html on desktop and mobile browser. It also provide the feature to color the selected text/html
 
 ## Installation
 To install this package you have to run
@@ -9,6 +9,8 @@ npm install text-selection-react
 
 ## Demo
 [Link of demo](https://admiring-hodgkin-677ccb.netlify.com/)
+
+##UPDATE:- Now Support Mobile Browser Also 
 
 ## Usage
 
@@ -43,6 +45,10 @@ colorText :- if true then it color the selected text
 so if you click on submit it will change the background of the text into
 
 ![Image of change background](https://raw.githubusercontent.com/abhinavNehra/get-selected-text/master/images/popup_color.png)
+
+Mobile View
+
+![Image of multi events](https://raw.githubusercontent.com/abhinavNehra/get-selected-text/master/images/mobile-view.png)
 
 you can add as many event as you want in it 
 
