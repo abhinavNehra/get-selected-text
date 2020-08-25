@@ -42,7 +42,7 @@ var css = function css(props) {
     color = props.color;
   }
 
-  return "\n        .popup {\n          width: auto;\n          position: absolute;\n          visibility: hidden;\n          z-index: 9999999999;\n          will-change: transform;\n          top: 0px;\n          left: 0px;\n          transform: translate3d(0px, 0px, 0px);\n          display:block;\n          background-color: #000;\n          color: #FFF;\n          text-align: center;\n          border-radius: 6px;\n          padding: 10px;\n          margin-left: -80px;\n          line-height: 20px;\n          font-size: 14px;\n          border: 4px solid rgb(0, 0, 0);\n          box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 2px 0px;\n         }\n        .popup::after {\n          content: \"\";\n          position: absolute;\n          width: 0;\n          height: 0;\n          border-width: 10px;\n          border-style: solid;\n          border-color: #000 transparent transparent transparent;\n          top: 44px;\n          left: 50%;\n          margin-left:-12px;\n          \n        }\n        .popupItem{width:auto; padding:8px 12px; font-size:16px; font-weight:bold; border-right:1px solid #433E49; cursor:pointer;}\n        .popupItem:hover{text-decoration:underline; color:#1890ff;}\n        .popupItem:last-child{border-right:none}\n        .extracted-class {\n        position: relative;\n    display: inline-block;\n    }\n        .extracted-class::after {\n          background:  ".concat(color, ";\n          content: \"\";\n          display: block;\n          position: absolute;\n          z-index: 999;\n          left: 0;\n          right: 0;\n          opacity: 0.3;\n          top: 0;\n          bottom: 0;\n        }\n        \n        .extracted-simple-text {\n          background-color: ").concat(color, ";\n          color: black;\n        }\n        \n        .for-mobile {\n            position: fixed;\n            top: 50%;\n            right: 40px;\n            width: auto;\n        }\n        .visible {\n            visibility: visible;\n        }\n        ");
+  return "\n        .popup {\n          width: auto;\n          position: absolute;\n          visibility: hidden;\n          z-index: 9999999999;\n          will-change: transform;\n          top: 0px;\n          left: 0px;\n          transform: translate3d(0px, 0px, 0px);\n          display:block;\n          background-color: #000;\n          color: #FFF;\n          text-align: center;\n          border-radius: 6px;\n          padding: 10px;\n          margin-left: -80px;\n          line-height: 20px;\n          font-size: 14px;\n          borde r: 4px solid rgb(0, 0, 0);\n          box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 2px 0px;\n         }\n        .popup::after {\n          content: \"\";\n          position: absolute;\n          width: 0;\n          height: 0;\n          border-width: 10px;\n          border-style: solid;\n          border-color: #000 transparent transparent transparent;\n          top: 44px;\n          left: 50%;\n          margin-left:-12px;\n          \n        }\n        .popupItem{width:auto; padding:8px 12px; font-size:16px; font-weight:bold; border-right:1px solid #433E49; cursor:pointer;}\n        .popupItem:hover{text-decoration:underline; color:#1890ff;}\n        .popupItem:last-child{border-right:none}\n        .extracted-class {\n        position: relative;\n    display: inline-block;\n    }\n        .extracted-class::after {\n          background:  ".concat(color, ";\n          content: \"\";\n          display: block;\n          position: absolute;\n          z-index: 999;\n          left: 0;\n          right: 0;\n          opacity: 0.3;\n          top: 0;\n          bottom: 0;\n        }\n        \n        .extracted-simple-text {\n          background-color: ").concat(color, ";\n          color: black;\n        }\n        \n        .for-mobile {\n            position: fixed;\n            top: 50%;\n            right: 40px;\n            width: auto;\n        }\n        .visible {\n            visibility: visible;\n        }\n\n        #tooltip {\n            position: fixed;\n            display: none;\n        }\n        ");
 };
 
 var PopOver = /*#__PURE__*/function (_Component) {
@@ -121,9 +121,11 @@ var PopOver = /*#__PURE__*/function (_Component) {
         if (_this.frangment) {
           if (_this.props.colorText) {
             var span = document.createElement('span');
+            var id = Math.floor(Math.random() * 1000);
 
             try {
-              span.className = 'extracted-simple-text';
+              span.className = "extracted-simple-text";
+              span.id = "id-".concat(id);
 
               _this.range.surroundContents(span);
             } catch (error) {
@@ -142,14 +144,16 @@ var PopOver = /*#__PURE__*/function (_Component) {
                   tagCollection.forEach(function (tag) {
                     if (child.nodeType === 3 && child.nodeName == '#text' && tag.innerHTML.includes(child.textContent)) {
                       var spanWrapper = document.createElement('span');
-                      spanWrapper.className = 'extracted-simple-text';
+                      spanWrapper.className = "extracted-simple-text id-".concat(id);
+                      spanWrapper.id = "id-".concat(id);
                       spanWrapper.append(child.textContent);
                       var Html = tag.innerHTML.replace(child.textContent, spanWrapper.innerHTML);
                       tag.innerHTML = Html;
                     } else if (tag.innerHTML && tag.innerHTML.includes(child.innerHTML)) {
                       var _spanWrapper = document.createElement('span');
 
-                      _spanWrapper.className = 'extracted-simple-text';
+                      _spanWrapper.className = "extracted-simple-text id-".concat(id);
+                      _spanWrapper.id = "id-".concat(id);
 
                       _spanWrapper.append(child.textContent);
 
@@ -160,6 +164,12 @@ var PopOver = /*#__PURE__*/function (_Component) {
                   });
                 });
               }
+            }
+
+            if (_this.props.unmark) {
+              console.log('this.props.tooltip', _assertThisInitialized(_this));
+
+              _this.tooltip(id);
             }
           }
 
@@ -184,6 +194,70 @@ var PopOver = /*#__PURE__*/function (_Component) {
       if (!_this.checkMobile()) _this.hidePopup();
     });
 
+    _defineProperty(_assertThisInitialized(_this), "tooltip", function (id) {
+      if (!_this.tooltipElement) {
+        var button = document.createElement('button');
+        button.id = "tooltip";
+        button.textContent = _this.props.unmarkText ? _this.props.unmarkText : 'remove';
+        button.style.display = 'none';
+        document.body.append(button);
+        _this.tooltipElement = button;
+      }
+
+      var elemID = "id-".concat(id);
+      var main = document.getElementById(elemID);
+
+      if (main) {
+        main.onmouseenter = _this.handleFocus;
+        main.onmouseleave = _this.handleLost;
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleFocus", function (e) {
+      e.preventDefault();
+      var button = document.getElementById('tooltip');
+
+      if (button.style.display === 'none') {
+        button.style.display = 'block';
+
+        if (button.className !== e.target.id) {
+          button.className = e.target.id;
+          button.style.top = "".concat(e.clientY, "px");
+          button.style.left = "".concat(e.clientX, "px");
+          button.onclick = _this.deleteElement;
+          button.onmouseleave = _this.handleLost;
+        }
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "deleteElement", function (evt) {
+      var classID = evt.target.className;
+      var element = document.getElementById(classID);
+
+      if (!element) {
+        return;
+      } else if (element) {
+        element.className = '';
+        element.id = '';
+        element.onmouseenter = null;
+        element.onmouseleave = null;
+        return _this.deleteElement(evt);
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleLost", function (e) {
+      e.preventDefault();
+      console.log('lost --');
+
+      if (e.relatedTarget.id === 'tooltip' || e.target.id === 'tooltip' && e.relatedTarget.className === 'extracted-simple-text') {//console.log('tooltip')
+      } else {
+        console.log('other');
+        var button = document.getElementById('tooltip');
+        button.style.display = 'none';
+        button.className = "";
+      }
+    });
+
     _this.state = {
       startX: 0,
       startY: 0,
@@ -192,6 +266,7 @@ var PopOver = /*#__PURE__*/function (_Component) {
     _this.el = document.createElement('span');
     _this.range = null;
     _this.frangment = null;
+    _this.tooltipElement = null;
     return _this;
   }
 

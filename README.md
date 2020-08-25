@@ -11,7 +11,8 @@ npm install text-selection-react
 [Link of demo](https://admiring-hodgkin-677ccb.netlify.com/)
 
 ##UPDATE
- Now Support Mobile Browser Also 
+ Now Support Mobile Browser Also
+ Can undo selected text
 
 ## Usage
 
@@ -50,6 +51,11 @@ so if you click on submit it will change the background of the text into
 Mobile View
 
 ![Image of multi events](https://raw.githubusercontent.com/abhinavNehra/get-selected-text/master/images/mobile-view.png)
+
+
+Undo selected text
+![Image of multi events](https://raw.githubusercontent.com/abhinavNehra/get-selected-text/master/images/remove.png)
+
 
 you can add as many event as you want in it 
 
