@@ -11,8 +11,7 @@ npm install text-selection-react
 [Link of demo](https://admiring-hodgkin-677ccb.netlify.com/)
 
 ##UPDATE
- Now Support Mobile Browser Also
- Can undo selected text
+ Now Support Mobile Browser and Can undo selected text
 
 ## Usage
 
