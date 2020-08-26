@@ -8,7 +8,7 @@ npm install text-selection-react
 ```
 
 ## Demo
-[Link of demo](https://media.giphy.com/media/ZG0oq6clYo8dJYn2AN/giphy.gif)
+![Image of work](https://media.giphy.com/media/ZG0oq6clYo8dJYn2AN/giphy.gif)
 [Link of demo](https://admiring-hodgkin-677ccb.netlify.com/)
 
 ## UPDATE
