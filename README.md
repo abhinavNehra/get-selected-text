@@ -55,6 +55,8 @@ Mobile View
 Undo selected text
 ![Image of multi events](https://raw.githubusercontent.com/abhinavNehra/get-selected-text/master/images/remove.png)
 
+Attribute for Remove/Undo button
+![Image of multi events](https://raw.githubusercontent.com/abhinavNehra/get-selected-text/master/images/remove_button.png)
 
 you can add as many event as you want in it 
 
