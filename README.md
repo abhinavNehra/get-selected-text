@@ -8,7 +8,9 @@ npm install text-selection-react
 ```
 
 ## Demo
-![Image of work](https://media.giphy.com/media/ZG0oq6clYo8dJYn2AN/giphy.gif)
+![Image of work](https://raw.githubusercontent.com/abhinavNehra/get-selected-text/master/images/popover-example.png)
+
+## Real Demo 
 [Link of demo](https://admiring-hodgkin-677ccb.netlify.com/)
 
 ## UPDATE
