@@ -10,9 +10,11 @@ npm install text-selection-react
 ## Demo
 [Link of demo](https://admiring-hodgkin-677ccb.netlify.com/)
 
-##UPDATE
+## UPDATE
  Now Support Mobile Browser and Can undo selected text
 
+## NEXT RELEASE
+  Add style and userpreffered style to Remove button
 ## Usage
 
 This is a independent module. To use it you don't have to wrap it around any component. You can put it any where in the component or in the file inside render to use this component.
