@@ -1,3 +1,6 @@
+## Demo
+![Image of work](https://raw.githubusercontent.com/abhinavNehra/get-selected-text/master/images/demo.gif)
+
 # text selection react
 text selection react module provide the selected text and html on desktop and mobile browser. It also provide the feature to color the selected text/html
 
@@ -6,9 +9,6 @@ To install this package you have to run
 ```bash
 npm install text-selection-react
 ```
-
-## Demo
-![Image of work](https://raw.githubusercontent.com/abhinavNehra/get-selected-text/master/images/popover-example.png)
 
 ## Real Demo 
 [Link of demo](https://admiring-hodgkin-677ccb.netlify.com/)
