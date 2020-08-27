@@ -17,7 +17,9 @@ npm install text-selection-react
  Now Support Mobile Browser and Can undo selected text
 
 ## NEXT RELEASE
-  Add style and userpreffered style to Remove button
+  1. Improve Remove button style and also add functionality for user to add preffered style to Remove button
+  2. Add choise to highlight the selected text or not
+  
 ## Usage
 
 This is a independent module. To use it you don't have to wrap it around any component. You can put it any where in the component or in the file inside render to use this component.
